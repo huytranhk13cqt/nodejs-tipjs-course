@@ -10,6 +10,11 @@ app.use(helmet());
 app.use(compression());
 
 // init database
+require('./databases/init.mongodb.lv1');
+
+// if want to check overload - turn on 2 lines code below
+// const { checkOverloadConnection } = require('./helpers/check.connect');
+// checkOverloadConnection();
 
 // init routes
 app.get('/', (req, res, next) => {
