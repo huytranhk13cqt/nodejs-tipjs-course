@@ -2,8 +2,12 @@
 
 const mongoose = require('mongoose');
 const { countConnection } = require('../helpers/check.connect');
+const {
+	db: { host, port, name },
+} = require('../configs/config.mongodb');
+const localAdress = `mongodb://${host}:${port}/${name}`;
 
-const localAdress = `mongodb://127.0.0.1:27017/iotShop`;
+// console.log(`database address: `, localAdress);
 
 // singleton pattern - connect once time
 class Database {

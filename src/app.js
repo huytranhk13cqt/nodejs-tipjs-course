@@ -1,8 +1,11 @@
+'use strict';
+
 const compression = require('compression');
 const express = require('express');
 const { default: helmet } = require('helmet');
 const morgan = require('morgan');
 const app = express();
+require('dotenv').config();
 
 // init middlewares
 app.use(morgan('dev'));
@@ -12,7 +15,7 @@ app.use(compression());
 // init database
 require('./databases/init.mongodb.lv1');
 
-// if want to check overload - turn on 2 lines code below
+// Check Overload Connection Feature
 // const { checkOverloadConnection } = require('./helpers/check.connect');
 // checkOverloadConnection();
 
