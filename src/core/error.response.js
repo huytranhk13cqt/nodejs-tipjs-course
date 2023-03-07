@@ -25,7 +25,6 @@ class ConflictRequestError extends ErrorResponse {
 	}
 }
 
-// inherit ErrorResponse
 class BadRequestError extends ErrorResponse {
 	constructor(message = REASONSTATUSCODE.CONFLICT, statusCode = STATUSCODE.FORBIDEN) {
 		super(message, statusCode);

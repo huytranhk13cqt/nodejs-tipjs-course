@@ -9,7 +9,7 @@ const {
 const PORT = port || 8888;
 
 const server = app.listen(PORT, () => {
-	console.log(`IoT Server open at ${PORT}`);
+	console.log(`IoT Server opened at ${PORT}`);
 });
 
 // process.on('SIGINT', () => {

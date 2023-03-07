@@ -6,7 +6,7 @@ const router = express.Router();
 
 const { asyncHandler } = require('../../utils/Auth/checkAuth');
 
-// signUp
+// signUp API
 router.post('/shop/signup', asyncHandler(accessController.signUp));
 
 module.exports = router;

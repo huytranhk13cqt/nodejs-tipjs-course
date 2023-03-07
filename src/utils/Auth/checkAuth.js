@@ -42,7 +42,7 @@ const permission = (permission) => {
 			});
 		}
 
-		// check validation of permission
+		// check valid of permission
 		console.log('permission::', req.objKey.permissions);
 		const validPermission = req.objKey.permissions.includes(permission);
 

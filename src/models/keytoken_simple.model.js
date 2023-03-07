@@ -5,6 +5,7 @@ const { Schema, model } = require('mongoose');
 const DOCUMENT_NAME = 'd_Key';
 const COLLECTION_NAME = 'c_Key';
 
+// Declare the Schema of the Mongo model .
 var keyTokenSchema = new Schema(
 	{
 		user: {

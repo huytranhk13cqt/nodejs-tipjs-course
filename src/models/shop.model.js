@@ -5,6 +5,7 @@ const { model, Schema, Types } = require('mongoose');
 const DOCUMENT_NAME = 'd_Shop';
 const COLLECTION_NAME = 'c_Shop';
 
+// Declare the Schema of the Mongo model .
 var shopSchema = new Schema(
 	{
 		name: {
