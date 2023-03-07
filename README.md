@@ -52,3 +52,5 @@ mongoose
     - cách làm này sẽ vô tình tạo ra nhiều `connection` đến `database`
   - trong `javascript`
     - nhờ có cơ chế cache của `require` nên nó khó tạo ra thêm `connection` mới đến `database` . Tuy nhiên cách này không mang tính `reusable`
+
+... continue
