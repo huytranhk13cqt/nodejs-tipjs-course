@@ -5,9 +5,8 @@ const { countConnection } = require('../helpers/check.connect');
 const {
 	db: { host, port, name },
 } = require('../configs/config.mongodb');
-const localAdress = `mongodb://${host}:${port}/${name}`;
 
-// console.log(`database address: `, localAdress);
+const localAdress = `mongodb://${host}:${port}/${name}`;
 
 // singleton pattern - connect once time
 class Database {
@@ -22,7 +21,7 @@ class Database {
 			mongoose.set('debug', { color: true });
 		}
 		mongoose
-			.connect(localAdress)
+			.connect(localAdress, { maxPoolSize: 50 })
 			.then((_) => {
 				console.log(`Connected MongoDB Success PRO`);
 				countConnection();

@@ -1,0 +1,12 @@
+@url_dev=http://192.168.1.192:6789/v1/api/
+
+// ********** Sign up ********** //
+POST {{url_dev}}/shop/signup
+Content-Type: application/json
+x-api-key: ef539ffe9b9ecb7b41e86400ae393a5f32424a32dea4201e592a6586a4c6a0f160d17b75cfb3fcf6ae4391e906b617502aa14dd3ac9f42478a7248b9d3dfc53d
+
+{
+    "name" : "Shop ESP32",
+    "password" : "abc123",
+    "email" : "shopesp32@gmail.com"
+} 

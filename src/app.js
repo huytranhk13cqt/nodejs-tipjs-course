@@ -11,27 +11,34 @@ require('dotenv').config();
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(compression());
+app.use(express.json());
+app.use(express.urlencoded({ extends: true }));
 
 // init database
 require('./databases/init.mongodb.lv1');
 
 // Check Overload Connection Feature
-// const { checkOverloadConnection } = require('./helpers/check.connect');
-// checkOverloadConnection();
+// -------------------- const { checkOverloadConnection } = require('./helpers/check.connect');
+// -------------------- checkOverloadConnection();
 
 // init routes
-app.get('/', (req, res, next) => {
-	const sensorData = {
-		humid: 78.9,
-		temp: 33.5,
-	};
-
-	return res.status(200).json({
-		message: 'Hello Bro',
-		metadata: sensorData.toString().repeat(100000),
-	});
-});
+app.use('/', require('./routes'));
 
 // handling error
+app.use((req, res, next) => {
+	const error = new Error('Not Found');
+	error.status = 404;
+	next(error);
+});
+
+app.use((error, req, res, next) => {
+	const statusCode = error.status || 500;
+
+	return res.status(statusCode).json({
+		status: 'error',
+		code: statusCode,
+		message: error.message || 'Interal Server Error',
+	});
+});
 
 module.exports = app;

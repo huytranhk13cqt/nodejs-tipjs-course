@@ -27,7 +27,8 @@ const productionConfig = {
 const config = { developmentConfig, productionConfig };
 const env = process.env.NODE_ENVIRONMENT || 'developmentConfig';
 
-console.log(config[env], env);
+// debug
+// console.log(config[env], env);
 
 // default : export developmentConfig
 module.exports = config[env];

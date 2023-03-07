@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const localAdress = `mongodb://127.0.0.1:27017/iotShop`;
+const localAdress = `mongodb://127.0.0.1:27017/iotShopDev`;
 
 // many connect
 mongoose
