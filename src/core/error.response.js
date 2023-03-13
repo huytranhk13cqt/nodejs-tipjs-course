@@ -10,7 +10,7 @@ const REASONSTATUSCODE = {
 	CONFLICT: 'Conflict Error',
 };
 
-// inherit node.js
+// inherit node.js class 'Error'
 class ErrorResponse extends Error {
 	constructor(message, status) {
 		super(message);
@@ -18,7 +18,6 @@ class ErrorResponse extends Error {
 	}
 }
 
-// inherit ErrorResponse
 class ConflictRequestError extends ErrorResponse {
 	constructor(message = REASONSTATUSCODE.CONFLICT, statusCode = STATUSCODE.FORBIDEN) {
 		super(message, statusCode);
